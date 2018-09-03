@@ -1,0 +1,25 @@
+<head>
+  <title>semear</title>
+</head>
+
+<body>
+  <center><h1>Bem Vindos a Universidade Semear!</h1></center>
+
+  {{> hello}}
+  {{> info}}
+</body>
+
+<template name="hello">
+  <center><button>Clique aqui!</button></center>
+  <p>Você apertou {{counter}} vezes.</p>
+</template>
+
+<template name="info">
+  <h2>Acesse Nossas Redes Sociais</h2>
+  <ul>
+    <li><a href="https://www.meteor.com/try" target="_blank">Facebook</a></li>
+    <li><a href="http://guide.meteor.com" target="_blank">Instagram</a></li>
+    <li><a href="https://docs.meteor.com" target="_blank">Site</a></li>
+    <li><a href="https://forums.meteor.com" target="_blank">Twitter</a></li>
+  </ul>
+</template>
