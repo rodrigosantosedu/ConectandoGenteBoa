@@ -3,7 +3,10 @@ Template.Post.helpers({
 		var idDoAutor = this.idDoAutor;
 		var autor = Meteor.users.findOne({_id: idDoAutor});
 		return autor.username;
-	}
+	},
+	numeroDeCurtidas: function() {
+        return this.curtidas.length;
+    }
 });
 
 Template.Post.events({
