@@ -5,8 +5,16 @@ Meteor.methods({
         if(Meteor.userId() !== null) {
             Posts.insert({
                 texto: textoDoFormulario,
-                idDoAutor: Meteor.userId()
+                idDoAutor: Meteor.userId(),
+                curtidas: []
             });
         }
+    },
+    "curtirPost": function(idDoPost){
+    	Posts.update(idDoPost,{
+    		$addToSet: {
+    			curtidas: Meteor.userId()
+    		}
+    	});
     }
 });

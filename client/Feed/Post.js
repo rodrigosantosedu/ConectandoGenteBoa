@@ -5,3 +5,9 @@ Template.Post.helpers({
 		return autor.username;
 	}
 });
+
+Template.Post.events({
+	"click .like-button": function(evento, template){
+		Meteor.call("curtirPost", template.data._id);
+	}
+});
