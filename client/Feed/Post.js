@@ -6,6 +6,15 @@ Template.Post.helpers({
 	},
 	numeroDeCurtidas: function() {
         return this.curtidas.length;
+    },
+  usuarioCurtiu: function() {
+        var curtidas = this.curtidas;
+        var posicao = curtidas.indexOf(Meteor.userId());
+        if(posicao === -1) {
+            return false;
+        } else {
+            return true;
+        }
     }
 });
 
