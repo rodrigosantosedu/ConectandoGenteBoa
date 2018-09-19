@@ -7,7 +7,10 @@ Template.Post.helpers({
 });
 
 Template.Post.events({
-	"click .like-button": function(evento, template){
+	"click .botao-curtir": function(evento, template){
 		Meteor.call("curtirPost", template.data._id);
+	},
+	"click .botao-descurtir": function(evento, template){
+		Meteor.call("descurtirPost", template.data._id);
 	}
 });
