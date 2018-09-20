@@ -14,9 +14,11 @@ Template.Perfil.helpers({
 
 Template.Perfil.events({
 	"click .seguir": function(evento, template){
-		console.log("SEGUINDO");
+		var idDoUsuario = FlowRouter.getParam("id");
+		Meteor.call("seguirUsuario",idDoUsuario);
 	},
 	"click .deixar-de-seguir": function(evento, template){
-		console.log("DES-SEGUINDO");
+		var idDoUsuario = FlowRouter.getParam("id");
+		Meteor.call("deixarDeSeguir",idDoUsuario);
 	}
 });
