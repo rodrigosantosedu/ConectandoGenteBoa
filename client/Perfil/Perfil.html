@@ -6,7 +6,10 @@
 					<h1>{{username}}</h1>
 					<h4>{{profile.name}}</h4>
 				{{/with}}
+				<button class="btn btn-primary seguir">Seguir</button>
+				<button class="btn btn-danger deixar-de-seguir">Deixar de Seguir</button>
 			</div>
+
 			<div class="col-md-6">
 				{{#each posts}}
 					{{> Post}}
