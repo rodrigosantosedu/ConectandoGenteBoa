@@ -58,3 +58,13 @@
 .tt-suggestion p {
   margin: 0;
 }/* CSS declarations go here */
+
+
+body{
+	background-color: #efefef;
+}
+
+.botao-curtir:hover, .botao-descurtir:hover{
+	background-color:#337ab7;
+	color: #ffffff;
+}
