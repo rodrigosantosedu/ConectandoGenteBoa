@@ -19,12 +19,8 @@ Template.Perfil.helpers({
     euMesmo: function(){
     	var idDoUsuario = FlowRouter.getParam("id");
     	var perfilAtual = Meteor.userId();
-
-
     	return idDoUsuario === perfilAtual;
-
     }
-
 });
 
 Template.Perfil.events({
