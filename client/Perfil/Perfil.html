@@ -6,8 +6,16 @@
 					<h1>{{username}}</h1>
 					<h4>{{profile.name}}</h4>
 				{{/with}}
-				<button class="btn btn-primary seguir">Seguir</button>
-				<button class="btn btn-danger deixar-de-seguir">Deixar de Seguir</button>
+
+        		{{#if euMesmo}}
+        			{{#if segue}}
+	          		<button class="btn btn-danger deixar-de-seguir">Deixar de Seguir</button>
+	        		{{else}}
+	          		<button class="btn btn-primary seguir">Seguir</button>
+        			{{/if}}
+        		{{else}}
+        		{{/if}}
+
 			</div>
 
 			<div class="col-md-6">
