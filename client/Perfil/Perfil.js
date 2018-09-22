@@ -4,11 +4,11 @@ Template.Perfil.helpers({
 		var info = Meteor.users.findOne({_id: idDoUsuario});
 		return info;
 	},
-	posts: function(){
-		var idDoUsuario = FlowRouter.getParam("id");
-		var postsDoPerfil = Posts.find({idDoAutor: idDoUsuario}).fetch();
-		return postsDoPerfil;
-	},
+	posts: function() {
+        var idDoUsuario = FlowRouter.getParam("id");
+        var postsDoPerfil = Posts.find({idDoAutor: idDoUsuario}).fetch().reverse();
+        return postsDoPerfil;
+    },
 	segue: function() {
         var idDoUsuario = FlowRouter.getParam("id");
         var usuario = Meteor.users.findOne({_id: idDoUsuario});
