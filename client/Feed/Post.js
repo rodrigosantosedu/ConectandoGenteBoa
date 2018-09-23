@@ -1,3 +1,7 @@
+Template.Post.onCreated(function () {
+    Meteor.subscribe("comentarios", this.data._id);
+});
+
 Template.Post.helpers({
 	userNameDoAutor: function(){
 		var idDoAutor = this.idDoAutor;
