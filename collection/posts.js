@@ -1,7 +1,7 @@
 Posts = new Mongo.Collection("posts");
 
 Meteor.methods({
-    "inserirPost": function(textoDoFormulario) {
+    "inserirPost": function(textoDoFormulario, urlDaImagem) {
         if(Meteor.userId() !== null && textoDoFormulario) {
           // texto vazio é falso e undefined é falso e null é falso, sendo assim
           //validamos o formulario de post para todos os casos que seriam vazios
@@ -9,7 +9,8 @@ Meteor.methods({
             Posts.insert({
                 texto: textoDoFormulario,
                 idDoAutor: Meteor.userId(),
-                curtidas: []
+                curtidas: [],
+                imagem: urlDaImagem
             });
         }
     },
