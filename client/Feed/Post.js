@@ -18,7 +18,11 @@ Template.Post.helpers({
     },
   comentarios: function(){
   	return Comentarios.find({post: this._id}).fetch();
-  }
+  },
+    eAutor: function () {
+        var idDoAutor = this.idDoAutor;
+        return idDoAutor === Meteor.userId();
+    }
 });
 
 Template.Post.events({
@@ -27,5 +31,8 @@ Template.Post.events({
 	},
 	"click .botao-descurtir": function(evento, template){
 		Meteor.call("descurtirPost", template.data._id);
-	}
+    },
+    "click .botao-remover": function (evento, template) {
+        Meteor.call("removerPost", template.data._id);
+    }
 });
